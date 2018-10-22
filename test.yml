@@ -1,0 +1,11 @@
+---
+- name: Pause testing
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: here go
+      pause: prompt="ENTER || CTRL-C"
+      register: prom
+    - name: here go 2
+      pause: seconds=30
+    - debug: var=prom.user_input
