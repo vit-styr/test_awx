@@ -1,0 +1,6 @@
+---
+- hosts: containers
+  gather_facts: false
+  tasks:
+    - name: ping de.de
+      shell: ping de.de -c 4
