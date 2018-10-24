@@ -1,5 +1,5 @@
 ---
-- hosts: localhost 
+- hosts: 
   gather_facts: false
   tasks:
     - name: ping de.de
