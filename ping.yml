@@ -1,6 +1,8 @@
 ---
-- hosts: 
+- hosts: localhost 
   gather_facts: false
   tasks:
     - name: ping de.de
-      shl: ping de.de -c 4
+      shell: ping de.de -c 4
+    - set_fact: 
+         test: out_from test flow1  

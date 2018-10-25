@@ -6,3 +6,4 @@
       shell: ansible --version
       register: out
     - debug: var=out.stdout
+    - debug: var=test
