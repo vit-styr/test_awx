@@ -10,4 +10,4 @@
     - pause:
            prompt: reset accaunt
            echo: yes
-           seconds: 600
+           seconds: 10
