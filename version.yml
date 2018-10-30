@@ -8,7 +8,7 @@
         msg: 'variable test not defined'
       when: test is not defined
     - set_fact:
-          migrate: 'te'
+          migrate: 'test'
     - fail:
         msg:  'variable test not defined'
       when: migrate !='test'
