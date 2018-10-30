@@ -4,7 +4,9 @@
   tasks:
     - name: check ansible version
       shell: ansible --version
-    - fail:
-        msg: 'variable test not defined'
-      when: test is not defined
-    - debug: var=migrate
+    # - fail:
+    #     msg: 'variable test not defined'
+    #   when: test is not defined
+    - set_fact:
+          migrate: yes
+    - shell: echo done

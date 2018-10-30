@@ -9,5 +9,4 @@
            test: out_from test flow1
     - pause:
            prompt: reset accaunt
-           echo: yes
-           seconds: 10
+           seconds: 600
