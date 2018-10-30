@@ -1,10 +1,13 @@
 ---
-- hosts: localhost 
+- hosts: localhost
   gather_facts: false
   tasks:
     - name: ping de.de
       shell: ping de.de -c 4
-    - set_stats: 
+    - set_stats:
         data:
-           test: out_from test flow1  
-
+           test: out_from test flow1
+    - pause:
+           prompt: reset accaunt
+           echo: yes
+           seconds: 600
