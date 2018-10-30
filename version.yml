@@ -1,9 +1,10 @@
 ---
-- hosts: localhost 
+- hosts: localhost
   gather_facts: no
   tasks:
     - name: check ansible version
       shell: ansible --version
     - fail:
         msg: 'variable test not defined'
-      when: test is not defined  
+      when: test is not defined
+    - debug: var=migrate
