@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  vars_prompt:
+      - name: restart
+        prompt: Restart service
+        private: no
+  tasks:
+    - name: do something
+      shell: ping de.de -c 4
+    - name: debug
+      debug: var=restart
