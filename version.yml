@@ -8,6 +8,6 @@
     #     msg: 'variable test not defined'
     #   when: test is not defined
     - set_fact:
-          migrate: no
+          migrate: yes
     - shell: echo done
       when: migrate=='yes'
