@@ -2,6 +2,8 @@
 - hosts: localhost
   gather_facts: no
   tasks:
-    - set_fact:
-          reset: false
-    - debug: var=reset
+    - name: change value
+      replace:
+        path: reset
+        regexp: 'false'
+        replace: 'true'
