@@ -4,3 +4,4 @@
   tasks:
     - set_fact:
           reset: false
+    - debug: var=reset
