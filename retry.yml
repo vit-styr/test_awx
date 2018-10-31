@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    # - name: include variable
+    #   include_vars:
+    #      file: reset.yml
+    #      name: reset
+    - name: check variable
+      shell: cat reset| grep reset | awk '{print $2}'
+      register: output
+      retries: 100
+      delay: 10
+      until: output.stdout == 'true'
