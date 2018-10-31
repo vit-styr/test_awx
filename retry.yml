@@ -7,7 +7,7 @@
     #      file: reset.yml
     #      name: reset
     - name: check variable
-      shell: cat reset.yml| grep reset | awk '{print $2}'
+      shell: cat reset| grep reset | awk '{print $2}'
       register: output
       retries: 100
       delay: 10
