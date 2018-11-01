@@ -4,6 +4,6 @@
   tasks:
     - name: change value
       replace:
-        path: reset
+        path: "{{ filename }}"
         regexp: 'false'
         replace: "{{ input }}"

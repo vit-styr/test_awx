@@ -12,3 +12,8 @@
       retries: 100
       delay: 5
       until: output.stdout == 'true' or output.stdout == 'abort'
+    - name: change value back
+      replace:
+        path: reset
+        regexp: 'true|abort'
+        replace: 'false'
