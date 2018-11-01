@@ -2,7 +2,7 @@
 - hosts: localhost
   gather_facts: no
   vars_files:
-      - /var/lib/awx/projects/slack_tocken
+      - ../slack_tocken
   tasks:
     - name: Sending message to slack channel
       slack:
