@@ -12,3 +12,4 @@
       retries: 100
       delay: 10
       until: output.stdout == 'true'
+      failed_when: output.stdout == 'abort'
