@@ -6,4 +6,4 @@
       replace:
         path: reset
         regexp: 'false'
-        replace: 'true'
+        replace: "{{ input }}"

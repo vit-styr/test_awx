@@ -10,6 +10,5 @@
       shell: cat reset| grep reset | awk '{print $2}'
       register: output
       retries: 100
-      delay: 10
-      until: output.stdout == 'true'
-      failed_when: output.stdout == 'abort'
+      delay: 5
+      until: output.stdout == 'true' or output.stdout == 'abort'
