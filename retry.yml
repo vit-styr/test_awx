@@ -1,11 +1,15 @@
 ---
 - hosts: localhost
   gather_facts: no
+  vars_files:
+      - /var/lib/awx/projects/slack_tocken
   tasks:
-    # - name: include variable
-    #   include_vars:
-    #      file: reset.yml
-    #      name: reset
+    - name: Sending message to slack channel
+      slack:
+       token: '{{ slack_token }}'
+       channel: "#tower_borg"
+       username: "tower"
+       msg: 'oh my, you have to launch another playbok in Ansible Tower UI, make sure you have changed values'
     - name: check variable
       shell: cat reset| grep reset | awk '{print $2}'
       register: output
