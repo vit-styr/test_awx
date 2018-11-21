@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars_files:
+#      - ../slack_tocken
+  tasks:
+    - name: Sending message to slack channel
+      slack:
+       token: "{{ lookup('env', 'slack_token') }}"
+       channel: "#tower_borg"
+       username: "tower"
+       msg: 'oh my, you have to launch another playbok in Ansible Tower UI, make sure you have changed values'
+    - name: check variable
+      shell: cat reset| grep reset | awk '{print $2}'
+      register: output
+      retries: 100
+      delay: 5
+      until: output.stdout == 'true' or output.stdout == 'abort'
+    - name: change value back
+      replace:
+        path: reset
+        regexp: 'true|abort'
+        replace: 'false'
+
